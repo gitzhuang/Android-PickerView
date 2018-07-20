@@ -205,6 +205,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 })
                 .setType(new boolean[]{true, true, true, true, true, true})
+                .setInterval(new int[]{2,2,2,2,2,2})
                 .isDialog(true)
                 .build();
 

@@ -55,6 +55,7 @@ public class PickerOptions {
 
     //time picker
     public boolean[] type = new boolean[]{true, true, true, false, false, false};//显示类型，默认显示： 年月日
+    public int[] interval = new int[]{1, 1, 1, 1, 1, 1};//时间间隔，默认间隔： 1
 
     public Calendar date;//当前选中时间
     public Calendar startDate;//开始时间

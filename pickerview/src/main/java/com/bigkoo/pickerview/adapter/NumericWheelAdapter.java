@@ -10,21 +10,23 @@ public class NumericWheelAdapter implements WheelAdapter {
 	
 	private int minValue;
 	private int maxValue;
+	private int interval;//间隔
 
 	/**
 	 * Constructor
 	 * @param minValue the wheel min value
 	 * @param maxValue the wheel max value
 	 */
-	public NumericWheelAdapter(int minValue, int maxValue) {
+	public NumericWheelAdapter(int minValue, int maxValue, int interval) {
 		this.minValue = minValue;
 		this.maxValue = maxValue;
+		this.interval = interval == 0 ? 1 : interval;
 	}
 
 	@Override
 	public Object getItem(int index) {
 		if (index >= 0 && index < getItemsCount()) {
-			int value = minValue + index;
+			int value = minValue + index * interval;;
 			return value;
 		}
 		return 0;
@@ -32,7 +34,8 @@ public class NumericWheelAdapter implements WheelAdapter {
 
 	@Override
 	public int getItemsCount() {
-		return maxValue - minValue + 1;
+		double x = (maxValue - minValue + 1) / (double)interval;
+		return (int) Math.floor(x + 0.5);
 	}
 	
 	@Override

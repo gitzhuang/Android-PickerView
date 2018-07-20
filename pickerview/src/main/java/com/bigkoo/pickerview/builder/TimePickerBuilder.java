@@ -47,6 +47,19 @@ public class TimePickerBuilder {
         return this;
     }
 
+    /**
+     * new int[]{1,1,1,1,1,1}
+     * control the "year","month","day","hours","minutes","seconds " display or hide.
+     * 分别控制“年”“月”“日”“时”“分”“秒”的时间间隔。
+     *
+     * @param interval 整型数组，长度需要设置为6。
+     * @return TimePickerBuilder
+     */
+    public TimePickerBuilder setInterval(int[] interval) {
+        mPickerOptions.interval = interval;
+        return this;
+    }
+
     public TimePickerBuilder setSubmitText(String textContentConfirm) {
         mPickerOptions.textContentConfirm = textContentConfirm;
         return this;
